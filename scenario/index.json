@@ -1,0 +1,33 @@
+{
+  "title": "From Imperative to Declarative: Stabilize a Docker Test Server with Terraform",
+  "description": "Start with plain Docker, have it do a version drift, then fix it by declaring a state in Terraform (Docker provider).",
+  "difficulty": "beginner",
+  "time": "~20 minutes",
+  
+  "details": {
+    "intro": {
+        "text": "intro.md"
+      },
+    "steps": [
+      {
+        "text": "PART_A.md"
+      },
+      {
+        "text": "PART_B.md"
+      },
+      {
+        "text": "PART_C.md"
+      }
+    ],
+    "finish": {
+      "text": "summary.md"
+    }
+  },
+  "environment": {
+    "showdashboard": true,
+    "uieditorpath": "/root/workspace"
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
