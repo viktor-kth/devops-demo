@@ -1,7 +1,7 @@
 provider "docker" {}
 
 resource "docker_network" "app" {
-  name = "iac-net"
+  name = "terraform-iac-net"
 }
 
 resource "docker_image" "nginx" {
