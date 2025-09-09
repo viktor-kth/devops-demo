@@ -79,5 +79,6 @@ Recreating the frontend over and over would become very cumbersome, because then
 Now lets just clean this up before we move on to a better solution:
 
 ```bash
-docker rm -f web api
+docker rm -f web api iac-net
 ```
+
