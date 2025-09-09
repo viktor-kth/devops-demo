@@ -77,7 +77,7 @@ docker compose down
 We also need to make sure to stop the network, do this by running:
 
 ```bash
-docker rm -f iac-net
+docker rm -f docker-iac-net
 ```
 
 ## B4 The problem with Scaling even further
