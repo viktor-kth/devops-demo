@@ -22,7 +22,7 @@ From a step by step perspective the tutorial is outlined as such:
                     │
                     ▼
     +----------------------------------+
-    |     Terraform (Full IaC)         |
+    |  Terraform (Full IaC)            |
     |  - Infra across providers        |
     |  - State, plans, drift detection |
     +----------------------------------+
