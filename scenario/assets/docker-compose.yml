@@ -19,5 +19,6 @@ services:
 
 networks:
   app:
-    name: iac-net        
+    name: docker-iac-net      
+      
     driver: bridge
