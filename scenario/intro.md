@@ -1,6 +1,6 @@
 # From Imperative to Declarative: From a CLI Docker server to a Terraform infrastructure
 
-Interactiong with infrastructure is to begin usually done through something like, spinning up a docker instance using some cloud platform, then you would SSH into the instance and maybe start it using a few `docker run` commands. Its fast but but incredibly cumbersom to update and let alone scale.
+Interaction with infrastructure is to begin usually done through something like, spinning up a docker instance using some cloud platform, then you would SSH into the instance and maybe start it using a few `docker run` commands. Its fast but but incredibly cumbersom to update and let alone scale.
 
 This tutorial will walk you through the steps from imperativly spinning up a docker to declarativly defining the infrastructure with terraform. We will deploy the same simple app three times, one time each with the different methods instance with a simple front-end, backend endpoint.
 
@@ -43,4 +43,4 @@ By the end, you will be able to:
 
 ## Notes
 
-This container that we are going to be working in is already containing both the `docker compose` files and the ``terraform` files, we will use these later on in the tutorial, but feel free to run `ls` to browse the contents.
+This container that we are going to be working in is already containing both the `docker compose` files and the `terraform` files, we will use these later on in the tutorial, but feel free to run `ls` to browse the contents.

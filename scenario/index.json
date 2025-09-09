@@ -6,7 +6,8 @@
   
   "details": {
     "intro": {
-        "text": "intro.md"
+        "text": "intro.md",
+        "background": "background.sh"
       },
     "steps": [
       {
@@ -21,6 +22,30 @@
     ],
     "finish": {
       "text": "summary.md"
+    },
+    "assets": {
+      "host01": [
+        {
+          "file": "/nginx/default.conf",
+          "target": "/root/nginx",
+          "chmod": "+w"
+        },
+        {
+          "file": "/site/index.html",
+          "target": "/root/site",
+          "chmod": "+w"
+        },
+        {
+          "file": "/docker-compose.yml",
+          "target": "/root",
+          "chmod": "+w"
+        },
+        {"file": "terraform/.terraform.lock.hcl", "target": "/root/terraform_files", "chmod": "+w"},
+        {"file": "terraform/main.tf", "target": "/root/terraform_files", "chmod": "+w"},
+        {"file": "terraform/outputs.tf", "target": "/root/terraform_files", "chmod": "+w"},
+        {"file": "terraform/variables.tf", "target": "/root/terraform_files", "chmod": "+w"},
+        {"file": "terraform/versions.tf", "target": "/root/terraform_files", "chmod": "+w"}
+      ]
     }
   },
   "environment": {
