@@ -9,16 +9,16 @@ Both methods are useful but they lack the ability to manage entire enviroments, 
 
 This is where **Infrastructure as Code** (IAC) tools like Terraform come in, it allows us to:
 
-- Declare full the infrastructure in configuration files
+- Declare full infrastructure in configuration files
 - Host across different providers (Docker, AWS, Azure, GCP, Kubernetes, etc.) using the same workflow.
-- Track state and detect drift changes, so that we know whe  reality has diverged from our declaration
-- Plan changes before applying the to the running infrastructure
+- Track state and detect drift changes, so that we know when reality has diverged from our declaration
+- Plan changes before applying them to the running infrastructure
 
 Now lets look at how we would declare the same demo setup as we have setup in the previous two steps:
 
 ## C1 Defining the enviroment
 
-Here we define the resource providers that are requirde to run the following terraform build, these resoruces are also called *plugins*. Each provider exposes a set of resources that can be declared. In our case we are using Docker provider, which allows Terraform to manage Docker images but this could easily be replaced with AWS or Kubernetes, or just use all three if necessary. 
+Here we define the resource providers that are requirde to run the following terraform build, these resources are also called *plugins*. Each provider exposes a set of resources that can be declared. In our case we are using Docker provider, which allows Terraform to manage Docker images but this could easily be replaced with AWS or Kubernetes, or just use all three if necessary. 
 
 **Note:** The Terraform configuration is written in a markup language called *HCL*.
 
@@ -39,7 +39,7 @@ terraform {
 
 ---
 
-In Terraform, instead of hardcoding values inside each resoruce, we can define **variables** in this dedicated file. This makes configuration easier to read and maintaine across differrent enviroments. This is comparable to for example and `.env` file.
+In Terraform, instead of hardcoding values inside each resoruce, we can define **variables** in this dedicated file. This makes configuration easier to read and maintaine across differrent enviroments. This is comparable to for example a `.env` file.
 
 `variables.tf`
 
@@ -145,15 +145,15 @@ As you might be able to tell, this file has a similar structure to the `docker-c
 
 The other main difference is the lifecycle,
 
-- For docker whenever the `docker compose up -d` command is run it starts the container and creates the defined resources immediately.
+- For docker whenever the `docker-compose up -d` command is run it starts the container and creates the defined resources immediately.
 - However, for Terraform you instead start with creating a `plan` which you then `apply`, this process keeps track of the state and is therefore able to detect a drift within the infrastructure. You are then able to reconcile these drift changes back to the defined version of the infrastructure.
 - Lastly, Terraform also creates a state file, and whenever you make changes to the configuration files and want to apply these changes, Terraform will create a plan describing the changes that are about to take place before the change is made. This allows the you, developer to review the changes before they are applied.
 
 ## C2 Start Terraform
 
-The files that are outlined above can be found within the current tutorial system under the `/terraform` folder, to access it do `cd terraform`. Now you can view the files by writing a `ls` command.
+The files that are outlined above can be found within the current tutorial system under the `/terraform_files` folder, to access it do `cd terraform_files`. Now you can view the files by writing a `ls` command.
 
-Inorder to now start the terraform application now we need to run the following,
+In order to now start the terraform application now we need to run the following,
 
 Initialize the project:
 
@@ -171,7 +171,7 @@ To preview the changes have been made and which will be applied when running the
 terraform plan
 ```
 
-This command reads the `.tf` files and compares the desired state (config) with the real state (the running state & state file). It then outlines what will be created, changed and destoryed. The important part is that this command doesn't apply any of the changes it just scans and retunrs a **plan** of what will happen.
+This command reads the `.tf` files and compares the desired state (config) with the real state (the running state & state file). It then outlines what will be created, changed and destroyed. The important part is that this command doesn't apply any of the changes it just scans and returns a **plan** of what will happen.
 
 ---
 
@@ -209,7 +209,7 @@ Terraform will now detect that a resource is missing and plan to add it in the n
 terraform apply -auto-approve
 ```
 
-Terraform will now recreate the missing resoruce and you should now be able to run:
+Terraform will now recreate the missing resource and you should now be able to run:
 
 ```bash
 curl http://localhost:9000 && curl http://localhost:8080

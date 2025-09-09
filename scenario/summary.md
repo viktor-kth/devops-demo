@@ -24,7 +24,7 @@ In this tutorial we have deployed the same simple app three times using differen
     +----------------------------------+
 ```
 
-This has taken us from imperativly defining a container to being able to declare and entire infrastructure which can automatically be reconcilited in-case the actual running infrastructure were to change.  
+This has taken us from imperatively defining a container to being able to declare and entire infrastructure which can automatically be reconciliated in-case the actual running infrastructure were to change.  
 
 ## To recap
 
@@ -37,9 +37,9 @@ This has taken us from imperativly defining a container to being able to declare
 ### Docker Compose (Declarative)
 
 - Define the state of the container in a YAML file
-- One command (`docker compose up -d`) to launch the contianer.
+- One command (`docker compose up -d`) to launch the container.
 - Easy to share and reapet
-- Great for local development and more structured testing, higly limited in terms of infrastructure change managment and it limits us to a single container
+- Great for local development and more structured testing, highly limited in terms of infrastructure change management and it limits us to a single container
 
 ### Terraform (Declarative infrastructure)
 
@@ -55,8 +55,8 @@ We have also briefly introduced the idea of Infrastructure as Code (IaC) which m
 
 ## Key Takeaway
 
-- CLI is greate for fast experimentation and one-off tests
+- CLI is great for fast experimentation and one-off tests
 - Compose is useful for local development and single host apps
-- Terraform is the tool to use when you need a reliable and scaleable infrastructure, which is able to span multiple hosts and enviroments.
+- Terraform is the tool to use when you need a reliable and scaleable infrastructure, which is able to span multiple hosts and environments.
 
 The next natural step after this tutorial would be to look more closely into the concept of IaC.

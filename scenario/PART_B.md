@@ -1,6 +1,6 @@
 # Docker Compose
 
-Lets introduce Docker Compose. With this tool you *declare* the app in YAML. Instead of manually typing the `docker run` command, you define the desired state (services, ports, volums, networks). Then using `docker compose up -d` you tell docker to create or reconclie containers to match the defined state. This makes the process reproducible and easily shareable and allows changes to be **much** more clear and easier.
+Let's introduce Docker Compose. With this tool you *declare* the app in YAML. Instead of manually typing the `docker run` command, you define the desired state (services, ports, volumes, networks). Then using `docker compose up -d` you tell docker to create or reconcile containers to match the defined state. This makes the process reproducible and easily shareable and allows changes to be **much** more clear and easier.
 
 ## B1 Define a docker compose
 
@@ -38,9 +38,9 @@ networks:
 Here are some explanations some of the new keywords,
 
 - `services`: defines the resources we want to create
-- `web` and `api`: are the names of the frontend and backend, these we could change to anything we´d like based on our needs.
+- `web` and `api`: are the names of the frontend and backend, these we could change to anything we'd like based on our needs.
 - `image`: defines the docker resource we want to used
-- `command`: this defins the commands which will be run upon initialzation of the container.
+- `command`: this defines the commands which will be run upon initialization of the container.
 - `volumes`: these are the files we want to copy over to the container and where we want to put them, this could either be specific files or entire folders.
 - `networks`: this defines the local network over which our front-end and back-end can communicate
 
@@ -49,7 +49,7 @@ As you might be able to tell a lot of the information is the exact same as in th
 This file is present in the file system and by running:
 
 ```bash
-docker compose up -d
+docker-compose up -d
 ```
 
 You should automatically deploy it. If it fails and claims that the names or ports are already in use, then you forgot to clean them up from the previous step. To do this run:
@@ -71,7 +71,7 @@ curl http://localhost:9000 && curl http://localhost:8080
 Now to turn this off we need to run the following,
 
 ```bash
-docker compose down
+docker-compose down
 ```
 
 We also need to make sure to stop the network, do this by running:
@@ -92,6 +92,6 @@ But what happens when we need:
 
 With Compose, we would need to juggle multiple YAML files, need to move into the correct servers and start them one by one. This would almost be like going back to square one.
 
-This is where the concept if *Infrasctucture as Code*(IaC) comes in. IaC means that we declarativly define not only the state of the machines themselves but the entire infrastructure. A tool we can use to achive this we can use something like Terraform.
+This is where the concept if *Infrasctucture as Code* (IaC) comes in. IaC means that we declarativly define not only the state of the machines themselves but the entire infrastructure. A tool we can use to achive this we can use something like Terraform.
 
 Let's move on to the next section to look at what Terraform is.
