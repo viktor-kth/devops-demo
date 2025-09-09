@@ -74,12 +74,6 @@ Now to turn this off we need to run the following,
 docker compose down
 ```
 
-We also need to make sure to stop the network, do this by running:
-
-```bash
-docker rm -f docker-iac-net
-```
-
 ## B4 The problem with Scaling even further
 
 Now this gets us a fair bit, we are able to run multiple services from the same machine using a declarative system.
