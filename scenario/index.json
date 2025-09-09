@@ -1,9 +1,8 @@
 {
   "title": "From Imperative to Declarative: Stabilize a Docker Test Server with Terraform",
-  "description": "Start with plain Docker, have it do a version drift, then fix it by declaring a state in Terraform (Docker provider).",
+  "description": "Start with Docker CLI and learn how we can improve upon this with Docker Compose and eventually IaC with Terraform ",
   "difficulty": "beginner",
-  "time": "~20 minutes",
-  "path": "scenario",
+  "time": "~15 minutes",
   
   "details": {
     "intro": {

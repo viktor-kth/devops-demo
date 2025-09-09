@@ -18,7 +18,7 @@ In this tutorial we have deployed the same simple app three times using differen
                     │
                     ▼
     +----------------------------------+
-    |     Terraform (Full IaC)         |
+    |  Terraform (Full IaC)            |
     |  - Infra across providers        |
     |  - State, plans, drift detection |
     +----------------------------------+
